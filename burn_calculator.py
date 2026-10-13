@@ -56,7 +56,8 @@ frame_botones.pack(pady=10)
 frame_graves = tk.LabelFrame(frame_botones, text = "CRITICAL ZONES", font = ("Arial", 10, "bold"), fg = "red")
 frame_graves.pack(side=tk.LEFT, padx=10)
 for zona in zonas_graves:
-    boton = tk.Button(frame_graves, text=zona, font=("Arial", 15), command=lambda z=zona: zona_seleccionada.set(z))
+    boton = tk.Radiobutton(frame_graves, text=zona, font=(
+        "Arial", 15), variable=zona_seleccionada, value=zona, indicatoron=False, width=15, selectcolor="red")
     boton.pack(pady=5)
     
 # Zonas normales
@@ -64,8 +65,9 @@ frame_normales = tk.LabelFrame(frame_botones, text="NORMAL ZONES",
                         font=("Arial", 10, "bold"), fg="yellow")
 frame_normales.pack(side=tk.LEFT, padx=10)
 for zona in zonas_normales:
-    boton = tk.Button(frame_normales, text=zona, font=(
-        "Arial", 15), command=lambda z=zona: zona_seleccionada.set(z))
+    boton = tk.Radiobutton(frame_normales, text=zona, font=(
+        "Arial", 15), variable=zona_seleccionada, value=zona, indicatoron=False, width=15, selectcolor="yellow")
+
     boton.pack(pady=5)
 
 # Porcentaje SCQ
